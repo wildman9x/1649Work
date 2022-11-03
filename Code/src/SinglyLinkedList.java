@@ -41,6 +41,14 @@ public class SinglyLinkedList {
     public Object getHead() {
         return head.getData();
     }
+
+    public Node getHeadNode() {
+        return head;
+    }
+
+    public void setHead(Node head) {
+        this.head = head;
+    }
     
     public void add(Object data, int index) {
         if (index < 0 || index > size) {

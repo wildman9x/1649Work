@@ -33,12 +33,27 @@ public class Stack {
         return list.getHead();
     }
 
+    // public void reverseStack() {
+    //     Stack newStack = new Stack();
+    //     while (!this.isEmpty()) {
+    //         newStack.push(this.pop());
+    //     }
+    //     this.list = newStack.list;
+    // }
+
     public void reverseStack() {
-        Stack newStack = new Stack();
-        while (!this.isEmpty()) {
-            newStack.push(this.pop());
+        Node prev, current, next;
+        prev = null;
+        current = list.getHeadNode();
+        next = current.getNext();
+        while (next != null) {
+            current.setNext(prev);
+            prev = current;
+            current = next;
+            next = next.getNext();
         }
-        this.list = newStack.list;
+        current.setNext(prev);
+        list.setHead(current);
     }
 
     public void reverseStackRecursion() {
