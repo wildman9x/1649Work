@@ -26,6 +26,9 @@ public class Queue {
     }
     
     public Object peek() {
+        if (isEmpty()) {
+            return null;
+        }
         return list.get(0);
     }
     
