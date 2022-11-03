@@ -16,11 +16,12 @@ public class App {
         System.out.println(stack.size());
         // Add a new element to the top of the stack
         stack.push(11);
+        stack.push(5);
         System.out.println(stack.peek());
         System.out.println(stack.toString());
         System.out.println(stack.size());
         // Search for the index of 5 in the stack
-        System.out.println("The index of 5 is: " + stack.search(5));
+        System.out.println("The indices of 5 are: " + stack.search(5));
 
         // check if the stack is empty
         System.out.println("Is the stack empty? " + stack.isEmpty());

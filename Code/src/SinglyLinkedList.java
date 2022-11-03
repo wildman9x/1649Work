@@ -124,15 +124,17 @@ public class SinglyLinkedList {
     }
 
     // return the index of the first occurrence of the data
-    public int search(Object data) {
+    public ArrayList<Integer> search(Object data) {
         Node current = head;
+        ArrayList<Integer> indices = new ArrayList<Integer>();
         for (int i = 0; i < size; i++) {
             if (current.getData().equals(data)) {
-                return i;
+                indices.add(i);
             }
             current = current.getNext();
         }
-        return -1;
+        return indices;
+
     }
     
     public boolean isEmpty() {
