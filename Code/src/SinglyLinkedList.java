@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class SinglyLinkedList {
     private Node head;
     private Node tail;
@@ -69,25 +71,7 @@ public class SinglyLinkedList {
         return current.getData();
     }
     
-    public void remove(int index) {
-        if (index < 0 || index >= size()) {
-            throw new IndexOutOfBoundsException();
-        }
-        if (index == 0) {
-            Node temp = head;
-            head = head.getNext();
-            temp.setNext(null);
-        } else {
-            Node current = head;
-            for (int i = 0; i < index - 1; i++) {
-                current = current.getNext();
-            }
-            Node temp = current.getNext();
-            current.setNext(temp.getNext());
-            temp.setNext(null);
-        }
-        size--;
-    }
+    
 
     public void removeLast() {
         // remove(size - 1);
@@ -145,16 +129,14 @@ public class SinglyLinkedList {
 
     @Override
     public String toString() {
-        String s = "[";
+        String s = "";
         Node current = head;
+        ArrayList<Object> list = new ArrayList<>();
         while (current != null) {
-            s += current.getData();
-            if (current.getNext() != null) {
-                s += ", ";
-            }
+            list.add(current.getData());
             current = current.getNext();
         }
-        s += "]";
+        s = list.toString();
         return s;
     }
 }

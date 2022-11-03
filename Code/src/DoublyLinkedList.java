@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class DoublyLinkedList {
     private Node head;
     private Node tail;
@@ -8,8 +10,17 @@ public class DoublyLinkedList {
         tail = null;
         size = 0;
     }
+
+    // take in an array of any type and create a new DoublyLinkedList
+    // with the same elements as the array
+    public DoublyLinkedList(Object[] arr) {
+        this();
+        for (Object o : arr) {
+            add(o);
+        }
+    }
     
-    public void add(int data) {
+    public void add(Object data) {
         Node newNode = new Node(data);
         if (head == null) {
             head = newNode;
@@ -21,8 +32,19 @@ public class DoublyLinkedList {
         }
         size++;
     }
+
+    public int search(Object data) {
+        Node current = head;
+        for (int i = 0; i < size; i++) {
+            if (current.getData().equals(data)) {
+                return i;
+            }
+            current = current.getNext();
+        }
+        return -1;
+    }
     
-    public void add(int data, int index) {
+    public void add(Object data, int index) {
         if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException();
         }
@@ -79,18 +101,34 @@ public class DoublyLinkedList {
         }
         size--;
     }
+
+    public void removeFirst() {
+        // remove(0);
+        if (size == 0) {
+            throw new IndexOutOfBoundsException();
+        }
+        Node temp = head;
+        head = head.getNext();
+        head.setPrev(null);
+        temp.setNext(null);
+        size--;
+
+    }
     
     public int size() {
         return size;
     }
 
+    @Override
     public String toString() {
         String result = "";
         Node current = head;
+        ArrayList<Object> list = new ArrayList<Object>();
         while (current != null) {
-            result += current.getData() + " ";
+            list.add(current.getData());
             current = current.getNext();
         }
+        result = list.toString();
         return result;
     }
 }
