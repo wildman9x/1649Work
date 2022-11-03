@@ -1,7 +1,10 @@
 public class App {
     public static void main(String[] args) throws Exception {
         // Create a stack and put in an array of integers from 1 to 10
-        Stack stack = new Stack(new Integer[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10});
+        Stack stack = new Stack();
+        for (int i = 1; i <= 10; i++) {
+            stack.push(i);
+        }
         System.out.println(stack.toString());
         System.out.println(stack.peek());
         // Push 12 to the stack
@@ -39,7 +42,8 @@ public class App {
         System.out.println(queue.toString());
         System.out.println(queue.size());
         // Search for the index of 5 in the queue
-        System.out.println("The index of 5 is: " + queue.search(5));
+        int searchQuery = 3;
+        System.out.println("The index of " + searchQuery + " is: " + queue.search(searchQuery));
         
 
         

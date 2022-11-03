@@ -17,7 +17,6 @@ public class SinglyLinkedList {
         this();
         for (Object o : arr) {
             add(o);
-            
         }
     }
     
@@ -37,6 +36,11 @@ public class SinglyLinkedList {
     public Object getTail() {
         return tail.getData();
     }
+
+    // get head
+    public Object getHead() {
+        return head.getData();
+    }
     
     public void add(Object data, int index) {
         if (index < 0 || index > size) {
@@ -46,6 +50,9 @@ public class SinglyLinkedList {
         if (index == 0) {
             newNode.setNext(head);
             head = newNode;
+            if (tail == null) {
+                tail = head;
+            }
         } else if (index == size) {
             tail.setNext(newNode);
             tail = newNode;
@@ -56,7 +63,10 @@ public class SinglyLinkedList {
             }
             newNode.setNext(current.getNext());
             current.setNext(newNode);
+            // if the tail is null, set the tail to the new node
+            
         }
+        
         size++;
     }
 

@@ -28,7 +28,7 @@ public class Stack {
     
     public Object peek() {
         // return list.get(list.size() - 1);
-        return list.getTail();
+        return list.getHead();
     }
     
     public boolean isEmpty() {
