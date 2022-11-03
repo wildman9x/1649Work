@@ -26,6 +26,11 @@ public class App {
         // check if the stack is empty
         System.out.println("Is the stack empty? " + stack.isEmpty());
 
+        stack.reverseStackRecursion();
+        System.out.println(stack.toString());
+
+
+        System.out.println("Queue");
         // Create a queue and put in an array of integers from 1 to 10
         Queue queue = new Queue(new Integer[] {1, 2, 3, 4, 5, 6, 7, 8, 3, 9, 10});
         System.out.println(queue.toString());

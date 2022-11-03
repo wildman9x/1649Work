@@ -14,7 +14,7 @@ public class Stack {
         list = new SinglyLinkedList(arr);
     }
 
-    public void push(int data) {
+    public void push(Object data) {
         list.addFirst(data);
     }
 
@@ -31,6 +31,33 @@ public class Stack {
 
     public Object peek() {
         return list.getHead();
+    }
+
+    public void reverseStack() {
+        Stack newStack = new Stack();
+        while (!this.isEmpty()) {
+            newStack.push(this.pop());
+        }
+        this.list = newStack.list;
+    }
+
+    public void reverseStackRecursion() {
+        if (this.isEmpty()) {
+            return;
+        }
+        Object data = this.pop();
+        this.reverseStackRecursion();
+        this.insertAtBottom(data);
+    }
+
+    public void insertAtBottom(Object data) {
+        if (this.isEmpty()) {
+            this.push(data);
+            return;
+        }
+        Object temp = this.pop();
+        this.insertAtBottom(data);
+        this.push(temp);
     }
 
     public boolean isEmpty() {
