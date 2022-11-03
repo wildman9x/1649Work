@@ -4,7 +4,7 @@ public class DoublyLinkedList {
     private Node head;
     private Node tail;
     private int size;
-    
+
     public DoublyLinkedList() {
         head = null;
         tail = null;
@@ -19,7 +19,7 @@ public class DoublyLinkedList {
             add(o);
         }
     }
-    
+
     public void add(Object data) {
         Node newNode = new Node(data);
         if (head == null) {
@@ -46,7 +46,7 @@ public class DoublyLinkedList {
         }
         return indices;
     }
-    
+
     public void add(Object data, int index) {
         if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException();
@@ -72,7 +72,7 @@ public class DoublyLinkedList {
         }
         size++;
     }
-    
+
     public Object get(int index) {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException();
@@ -83,7 +83,7 @@ public class DoublyLinkedList {
         }
         return current.getData();
     }
-    
+
     public void remove(int index) {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException();
@@ -117,7 +117,7 @@ public class DoublyLinkedList {
         size--;
 
     }
-    
+
     public int size() {
         return size;
     }
