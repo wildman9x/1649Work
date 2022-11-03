@@ -27,7 +27,7 @@ public class App {
         System.out.println(queue.toString());
         System.out.println(queue.peek());
         // Enqueue 12 to the queue
-        queue.enqueue(12);
+        System.out.println(queue.enqueue(12)? "Enqueue successful" : "Enqueue failed");
         System.out.println(queue.toString());
         // Dequeue the first element from the queue
         queue.dequeue();

@@ -13,12 +13,12 @@ public class Stack {
     }
     
     public void push(int data) {
-        list.add(data);
+        list.addFirst(data);
     }
     
     public Object pop() {
-        Object data = list.get(list.size() - 1);
-        list.removeLast();
+        Object data = list.get(0);
+        list.removeFirst();
         return data;
     }
 

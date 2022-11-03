@@ -59,6 +59,10 @@ public class SinglyLinkedList {
         }
         size++;
     }
+
+    public void addFirst(Object data) {
+        add(data, 0);
+    }
     
     public Object get(int index) {
         if (index < 0 || index >= size) {
@@ -88,6 +92,19 @@ public class SinglyLinkedList {
             }
             current.setNext(null);
             tail = current;
+        }
+        size--;
+    }
+
+    public void removeFirst() {
+        if (size == 0) {
+            throw new IndexOutOfBoundsException();
+        }
+        if (size == 1) {
+            head = null;
+            tail = null;
+        } else {
+            head = head.getNext();
         }
         size--;
     }

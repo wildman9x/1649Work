@@ -12,8 +12,9 @@ public class Queue {
         list = new DoublyLinkedList(arr);
     }
     
-    public void enqueue(int data) {
+    public boolean enqueue(int data) {
         list.add(data);
+        return true;
     }
     
     public Object dequeue() {
