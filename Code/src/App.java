@@ -27,7 +27,7 @@ public class App {
         System.out.println("Is the stack empty? " + stack.isEmpty());
 
         // Create a queue and put in an array of integers from 1 to 10
-        Queue queue = new Queue(new Integer[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10});
+        Queue queue = new Queue(new Integer[] {1, 2, 3, 4, 5, 6, 7, 8, 3, 9, 10});
         System.out.println(queue.toString());
         System.out.println(queue.peek());
         // Enqueue 12 to the queue
@@ -44,7 +44,7 @@ public class App {
         System.out.println(queue.size());
         // Search for the index of 5 in the queue
         int searchQuery = 3;
-        System.out.println("The index of " + searchQuery + " is: " + queue.search(searchQuery));
+        System.out.println("The indices of " + searchQuery + " is: " + queue.search(searchQuery));
         
 
         

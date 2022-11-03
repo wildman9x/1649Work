@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 // Implement queue using doubly linked list
 public class Queue {
     private DoublyLinkedList list;
@@ -35,8 +37,9 @@ public class Queue {
         return list.size();
     }
 
-    public int search(Object data) {
-        return list.search(data);
+    public ArrayList<Integer> search(Object data) {
+        ArrayList<Integer> indices = new ArrayList<Integer>(list.search(data));
+        return indices;
     }
     
     @Override

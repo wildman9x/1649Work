@@ -33,15 +33,18 @@ public class DoublyLinkedList {
         size++;
     }
 
-    public int search(Object data) {
+    public ArrayList<Integer> search(Object data) {
         Node current = head;
-        for (int i = 0; i < size; i++) {
+        ArrayList<Integer> indices = new ArrayList<Integer>();
+        int index = 0;
+        while (current != null) {
             if (current.getData().equals(data)) {
-                return i;
+                indices.add(index);
             }
             current = current.getNext();
+            index++;
         }
-        return -1;
+        return indices;
     }
     
     public void add(Object data, int index) {
