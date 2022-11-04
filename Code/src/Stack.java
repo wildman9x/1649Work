@@ -19,6 +19,10 @@ public class Stack {
     }
 
     public Object pop() {
+        if (list.isEmpty()) {
+            // return error
+            return "Error: Stack is empty";
+        }
         Object data = list.get(0);
         list.removeFirst();
         return data;
@@ -34,14 +38,17 @@ public class Stack {
     }
 
     // public void reverseStack() {
-    //     Stack newStack = new Stack();
-    //     while (!this.isEmpty()) {
-    //         newStack.push(this.pop());
-    //     }
-    //     this.list = newStack.list;
+    // Stack newStack = new Stack();
+    // while (!this.isEmpty()) {
+    // newStack.push(this.pop());
+    // }
+    // this.list = newStack.list;
     // }
 
     public void reverseStack() {
+        if (this.isEmpty()) {
+            return;
+        }
         Node prev, current, next;
         prev = null;
         current = list.getHeadNode();

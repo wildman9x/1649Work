@@ -2,7 +2,7 @@ public class App {
     public static void main(String[] args) throws Exception {
         // Create a stack and put in an array of integers from 1 to 10
         Stack stack = new Stack();
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i <= 3; i++) {
             stack.push(i);
         }
         System.out.println(stack.toString());
@@ -11,7 +11,7 @@ public class App {
         stack.push(12);
         System.out.println(stack.toString());
         // Remove the top element from the stack
-        stack.pop();
+        System.out.println( "Pop: " + stack.pop());
         System.out.println(stack.toString());
         System.out.println(stack.size());
         // Add a new element to the top of the stack
@@ -20,6 +20,13 @@ public class App {
         System.out.println(stack.peek());
         System.out.println(stack.toString());
         System.out.println(stack.size());
+        Stack stack2 = new Stack();
+        System.out.println(stack2.toString());
+        System.out.println("Pop stack2: " + stack2.pop());
+        stack2.reverseStack();
+        System.out.println("Reverse stack2: " + stack2.toString());
+        stack2.reverseStackRecursion();
+        System.out.println("Reverse stack2 with recursion: " + stack2.toString());
         // Search for the index of 5 in the stack
         System.out.println("The indices of 5 are: " + stack.search(5));
 
