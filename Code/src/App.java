@@ -20,7 +20,13 @@ public class App {
         System.out.println(stack.peek());
         System.out.println(stack.toString());
         System.out.println(stack.size());
+
+        // isEmpty
+        System.out.println("isEmpty: " + stack.isEmpty());
+
         Stack stack2 = new Stack();
+        // search for 2
+        System.out.println("search for 2: " + stack2.search(2));
         System.out.println(stack2.toString());
         System.out.println("Pop stack2: " + stack2.pop());
         stack2.reverseStack();
@@ -44,9 +50,10 @@ public class App {
         System.out.println(queue.peek());
         // Enqueue 12 to the queue
         System.out.println(queue.enqueue(12)? "Enqueue successful" : "Enqueue failed");
+        System.out.println(queue.enqueue(null)? "Enqueue successful" : "Enqueue failed");
         System.out.println(queue.toString());
         // Dequeue the first element from the queue
-        queue.dequeue();
+        System.out.println( "Dequeue: " + queue.dequeue());
         System.out.println(queue.toString());
         System.out.println(queue.size());
         // Add a new element to the end of the queue

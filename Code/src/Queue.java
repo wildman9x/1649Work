@@ -14,12 +14,19 @@ public class Queue {
         list = new DoublyLinkedList(arr);
     }
     
-    public boolean enqueue(int data) {
+    public boolean enqueue(Object data) {
+        if (data == null) {
+            return false;
+        }
         list.add(data);
         return true;
     }
     
     public Object dequeue() {
+        if (this.isEmpty()) {
+            // return error
+            return "Error: Queue is empty";
+        }
         Object data = list.get(0);
         list.removeFirst();
         return data;

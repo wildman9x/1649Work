@@ -92,8 +92,6 @@ public class SinglyLinkedList {
         }
         return current.getData();
     }
-    
-    
 
     public void removeLast() {
         // remove(size - 1);

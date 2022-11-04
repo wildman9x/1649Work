@@ -37,14 +37,6 @@ public class Stack {
         return list.getHead();
     }
 
-    // public void reverseStack() {
-    // Stack newStack = new Stack();
-    // while (!this.isEmpty()) {
-    // newStack.push(this.pop());
-    // }
-    // this.list = newStack.list;
-    // }
-
     public void reverseStack() {
         if (this.isEmpty()) {
             return;
